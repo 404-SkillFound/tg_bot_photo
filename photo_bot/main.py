@@ -1,6 +1,7 @@
 from fastapi import FastAPI
 
 from photo_bot.infrastructure.config.settings import get_settings
+from photo_bot.presentation.api.v1.routers import v1_router
 
 
 def create_application() -> FastAPI:
@@ -24,6 +25,7 @@ def create_application() -> FastAPI:
         docs_url='/docs',
         redoc_url='/redoc',
     )
+    app.include_router(v1_router)
     app.state.settings = settings
     #if settings.is_development:
     #    print('🛠️ Режим разработки')
