@@ -1,0 +1,51 @@
+indent-width = 4
+line-length = 79
+required-version = ">=0.11.11"
+target-version = "py311"
+preview = true
+exclude = ["src/alembic"]
+
+[format]
+docstring-code-format = true
+docstring-code-line-length = 60
+line-ending = "lf"
+quote-style = "single"
+
+[lint]
+ignore = [
+    "E265", "F811", "D100", "D105", "D104", "D203", "D211",
+    "D213", "N818", "W505", "ANN401", "S101", "B008", "RUF001", "RUF003", "RUF002"
+]
+select = [
+    "E3", "E5", "E4", "E7", "E9", "W", "C90", "I", "N", "D",
+    "F", "ANN", "ASYNC", "A", "COM", "RET", "B", "S", "TCH", "RUF"
+]
+
+[lint.extend-per-file-ignores]
+"__init__.py" = ["E402", "E401", "F401"]
+
+[lint.flake8-annotations]
+allow-star-arg-any = true
+mypy-init-return = true
+suppress-none-returning = true # функция не возвращает ничего (None) ANN201
+
+[lint.flake8-quotes]
+inline-quotes = "single"
+
+[lint.isort]
+case-sensitive = true
+known-local-folder = ["src"]
+force-sort-within-sections = true
+lines-after-imports = 2
+#lines-between-types = 1
+section-order = ["future", "standard-library", "third-party", "first-party", "local-folder"]
+
+[lint.mccabe]
+max-complexity = 10
+
+[lint.pycodestyle]
+max-doc-length = 79
+max-line-length = 79
+
+[lint.flake8-bugbear]
+extend-immutable-calls = ["B904"]
