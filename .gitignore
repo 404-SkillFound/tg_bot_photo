@@ -205,3 +205,9 @@ cython_debug/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
+.idea/misc.xml
+.idea/modules.xml
+.idea/tg_bot_photo.iml
+.idea/vcs.xml
+.idea/inspectionProfiles/profiles_settings.xml
+*.xml
